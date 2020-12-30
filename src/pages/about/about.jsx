@@ -6,8 +6,7 @@ class About extends Component {
   }
   // Code is invoked after the component is mounted/inserted into the DOM tree.
   componentDidMount() {
-    const url =
-      'https://en.wikipedia.org/w/api.php?action=opensearch&search=Seona+Dancing&format=json&origin=*'
+    const url = 'http://universities.hipolabs.com/search?name=middle'
 
     fetch(url)
       .then((result) => result.json())
@@ -19,8 +18,11 @@ class About extends Component {
   }
   render() {
     const { data } = this.state
-    const result = data.map((entry, index) => {
-      return <li key={index}>{entry}</li>
+    const result = data.map((item, index) => {
+      return <li key={index}>
+        <p>{item.country}</p>
+        <p>{item.name}</p>
+      </li>
     })
     return (
       <div>

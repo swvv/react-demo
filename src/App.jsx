@@ -5,10 +5,12 @@ import Table from './pages/table/table'
 import Form from './pages/table/form'
 import About from './pages/about/about'
 import Game from './pages/game/game'
+import Hello from './pages/hello/'
 import Todo from './pages/todo/todoIndex'
-function Home() {
-  return <h2>Home</h2>
-}
+import Home from './pages/home/'
+// function Home() {
+//   return <h2>Home</h2>
+// }
 class App extends Component {
   state = {
     characters: [
@@ -102,6 +104,16 @@ class App extends Component {
                     Game
                   </NavLink>
                 </li>
+                <li>
+                  <NavLink
+                    activeClassName="active"
+                    activeStyle={{ color: 'pink' }}
+                    to="/hello"
+                    className="11"
+                  >
+                    Hello
+                  </NavLink>
+                </li>
               </ul>
             </nav>
           </header>
@@ -122,6 +134,9 @@ class App extends Component {
               </Route>
               <Route path="/game" pattern="/game">
                 <Game />
+              </Route>
+              <Route path="/hello" pattern="/hello">
+                <Hello />
               </Route>
               <Route path="/" pattern="/">
                 <Home />
